@@ -22,7 +22,7 @@ class DrinkBucketWater implements Plugin
 		$this->api->addHandler("player.action", array($this, "eventHandle"), 50);
 	}
 
-	public function eventHandle($data, $event) {
+	public function eventHandle($data, $event, $dmg, $player) {
 		switch ($event) {
 			case "player.action":
 				$player = $data["player"];
@@ -32,7 +32,16 @@ class DrinkBucketWater implements Plugin
 					$player->setSlot($player->slot, BlockAPI::getItem(BUCKET, AIR, 1));
 				}
 				break;
-		}
+				
+					case "player.action":
+				if($item->getID() === BUCKET and $item->getMetaData() === LAVA and $player->entity->getHealth() =< 20) {
+		                      $player->entity->fire(4*10, "drinking");
+					$player->setSlot($player->slot, BlockAPI::getItem(BUCKET, AIR, 1));
+				}
+				break;
+				
+			
+	}
 	}
 
 	public function __destruct() {
