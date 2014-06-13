@@ -35,7 +35,7 @@ class DrinkBucketWater implements Plugin
 				
 					case "player.action":
 				if($item->getID() === BUCKET and $item->getMetaData() === LAVA and $player->entity->getHealth() =< 20) {
-		                      $player->entity->fire(4*10, "drinking");
+		                      $player->entity->fire(10*10, "drinking");
 					$player->setSlot($player->slot, BlockAPI::getItem(BUCKET, AIR, 1));
 				}
 				break;
