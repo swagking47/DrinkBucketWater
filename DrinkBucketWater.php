@@ -5,7 +5,7 @@ __PocketMine Plugin__
 name=DrinkBucketWater
 description=Drink Bucket Water to Heal (1 heart)
 version=1.0
-author=BlinkSun
+author=BlinkSun,swagboy47
 class=DrinkBucketWater
 apiversion=11,12
 */
